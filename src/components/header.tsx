@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Text } from "ink";
+import { Box, Text, useStdout } from "ink";
 import { BRAND_COLOR, APP_VERSION } from "../utils/constants.js";
 
 interface HeaderProps {
@@ -7,6 +7,9 @@ interface HeaderProps {
 }
 
 export function Header({ title }: HeaderProps) {
+  const { stdout } = useStdout();
+  const width = stdout?.columns ?? 60;
+
   return (
     <Box flexDirection="column" marginBottom={1}>
       <Box>
@@ -21,7 +24,7 @@ export function Header({ title }: HeaderProps) {
           </>
         )}
       </Box>
-      <Text color={BRAND_COLOR}>{"─".repeat(50)}</Text>
+      <Text color={BRAND_COLOR}>{"─".repeat(width)}</Text>
     </Box>
   );
 }

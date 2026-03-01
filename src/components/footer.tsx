@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Text } from "ink";
+import { Box, Text, useStdout } from "ink";
 import { MUTED_COLOR } from "../utils/constants.js";
 
 interface FooterProps {
@@ -8,6 +8,8 @@ interface FooterProps {
 }
 
 export function Footer({ hints = [], showBack = false }: FooterProps) {
+  const { stdout } = useStdout();
+  const width = stdout?.columns ?? 60;
   const allHints = [
     ...(showBack ? ["esc: back"] : []),
     ...hints,
@@ -15,15 +17,16 @@ export function Footer({ hints = [], showBack = false }: FooterProps) {
   ];
 
   return (
-    <Box marginTop={1}>
-      <Text color={MUTED_COLOR}>
-        {"─".repeat(50)}
-      </Text>
+    <Box flexDirection="column" marginTop={1}>
+      <Text color={MUTED_COLOR}>{"─".repeat(width)}</Text>
+      <Text color={MUTED_COLOR}>{allHints.join("  │  ")}</Text>
     </Box>
   );
 }
 
 export function KeyHints({ hints = [], showBack = false }: FooterProps) {
+  const { stdout } = useStdout();
+  const width = stdout?.columns ?? 60;
   const allHints = [
     ...(showBack ? ["esc: back"] : []),
     ...hints,
@@ -31,10 +34,9 @@ export function KeyHints({ hints = [], showBack = false }: FooterProps) {
   ];
 
   return (
-    <Box marginTop={1}>
-      <Text color={MUTED_COLOR}>
-        {allHints.join("  │  ")}
-      </Text>
+    <Box flexDirection="column" marginTop={1}>
+      <Text color={MUTED_COLOR}>{"─".repeat(width)}</Text>
+      <Text color={MUTED_COLOR}>{allHints.join("  │  ")}</Text>
     </Box>
   );
 }
