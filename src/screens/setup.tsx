@@ -97,12 +97,12 @@ export function SetupScreen({ twitter, onComplete }: SetupProps) {
 
       {step === "appKey" && (
         <Box flexDirection="column">
-          <Text bold>Step 1/4: App Key (API Key)</Text>
-          <Text color={MUTED_COLOR}>Paste your X app's API key:</Text>
+          <Text bold>Step 1/4: Consumer Key</Text>
+          <Text color={MUTED_COLOR}>OAuth 1.0 Keys → Consumer Key (click "Show")</Text>
           <Box marginTop={1}>
             <Text color={BRAND_COLOR}>▸ </Text>
             <TextInput
-              placeholder="Enter App Key..."
+              placeholder="Paste Consumer Key..."
               onSubmit={handleInput("appKey", "appSecret")}
             />
           </Box>
@@ -111,12 +111,12 @@ export function SetupScreen({ twitter, onComplete }: SetupProps) {
 
       {step === "appSecret" && (
         <Box flexDirection="column">
-          <Text bold>Step 2/4: App Secret (API Secret)</Text>
-          <Text color={MUTED_COLOR}>Paste your X app's API secret:</Text>
+          <Text bold>Step 2/4: Consumer Secret</Text>
+          <Text color={MUTED_COLOR}>Shown when you regenerate the Consumer Key</Text>
           <Box marginTop={1}>
             <Text color={BRAND_COLOR}>▸ </Text>
             <TextInput
-              placeholder="Enter App Secret..."
+              placeholder="Paste Consumer Secret..."
               onSubmit={handleInput("appSecret", "accessToken")}
             />
           </Box>
@@ -126,11 +126,11 @@ export function SetupScreen({ twitter, onComplete }: SetupProps) {
       {step === "accessToken" && (
         <Box flexDirection="column">
           <Text bold>Step 3/4: Access Token</Text>
-          <Text color={MUTED_COLOR}>Paste your access token:</Text>
+          <Text color={MUTED_COLOR}>OAuth 1.0 Keys → Access Token → click "Generate"</Text>
           <Box marginTop={1}>
             <Text color={BRAND_COLOR}>▸ </Text>
             <TextInput
-              placeholder="Enter Access Token..."
+              placeholder="Paste Access Token..."
               onSubmit={handleInput("accessToken", "accessSecret")}
             />
           </Box>
@@ -139,8 +139,8 @@ export function SetupScreen({ twitter, onComplete }: SetupProps) {
 
       {step === "accessSecret" && (
         <Box flexDirection="column">
-          <Text bold>Step 4/4: Access Secret</Text>
-          <Text color={MUTED_COLOR}>Paste your access token secret:</Text>
+          <Text bold>Step 4/4: Access Token Secret</Text>
+          <Text color={MUTED_COLOR}>Shown alongside the Access Token when generated</Text>
           <Box marginTop={1}>
             <Text color={BRAND_COLOR}>▸ </Text>
             <TextInput
