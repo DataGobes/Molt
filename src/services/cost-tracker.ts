@@ -1,5 +1,6 @@
 import Database from "better-sqlite3";
 import { API_COSTS } from "../utils/constants.js";
+import crypto from "crypto";
 
 export interface UsageRecord {
   endpoint: string;
@@ -27,7 +28,10 @@ export class CostTracker {
   constructor(dbPath: string) {
     this.db = new Database(dbPath);
     this.db.pragma("journal_mode = WAL");
-    this.sessionId = `s_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`;
+    const randomSuffix = parseInt(crypto.randomBytes(4).toString("hex"), 16)
+      .toString(36)
+      .slice(0, 6);
+    this.sessionId = `s_${Date.now()}_${randomSuffix}`;
     this.init();
   }
 
