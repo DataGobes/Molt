@@ -1,10 +1,10 @@
 {
   "name": "x-molt",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Terminal UI for X.com account management",
   "type": "module",
   "bin": {
-    "x-molt": "./dist/index.js"
+    "x-molt": "dist/index.js"
   },
   "scripts": {
     "dev": "tsx src/index.tsx",
@@ -23,7 +23,17 @@
     "ink",
     "x-molt"
   ],
+  "author": "Gijs Jansen (https://github.com/DataGobes)",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DataGobes/x-molt.git"
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
   "engines": {
     "node": ">=18"
   },

@@ -17,13 +17,15 @@
   <img src="https://img.shields.io/badge/UI-Ink_5_(React)-61DAFB?style=flat-square&logo=react" alt="Ink 5" />
   <img src="https://img.shields.io/badge/Search-SQLite_FTS5-003B57?style=flat-square&logo=sqlite" alt="SQLite FTS5" />
   <img src="https://img.shields.io/badge/TypeScript-strict-3178C6?style=flat-square&logo=typescript" alt="TypeScript" />
-  <img src="https://img.shields.io/github/license/DataGobes/Molt?style=flat-square" alt="MIT License" />
+  <img src="https://img.shields.io/github/license/DataGobes/x-molt?style=flat-square" alt="MIT License" />
+  <a href="https://www.npmjs.com/package/x-molt"><img src="https://img.shields.io/npm/v/x-molt?style=flat-square&color=CB3837&logo=npm" alt="npm version" /></a>
+  <a href="https://github.com/DataGobes/x-molt/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/DataGobes/x-molt/ci.yml?branch=main&style=flat-square&logo=github&label=CI" alt="CI" /></a>
 </p>
 
 ---
 
 ```
-  𝕏  x-molt v1.0.0
+  𝕏  x-molt v0.1.0
 ──────────────────────────────────────────────────
   Manage your X.com account from the terminal.
 
@@ -102,13 +104,26 @@ No subscriptions. No third-party services touching your data. Just a TypeScript 
 ## Install
 
 ```bash
-git clone https://github.com/DataGobes/Molt.git
+npx x-molt
+```
+
+Or install globally:
+
+```bash
+npm install -g x-molt
+x-molt
+```
+
+### From source
+
+```bash
+git clone https://github.com/DataGobes/x-molt.git
 cd Molt
 pnpm install
 pnpm dev
 ```
 
-That's it. First run launches the setup wizard.
+First run launches the setup wizard.
 
 ## Setup
 
